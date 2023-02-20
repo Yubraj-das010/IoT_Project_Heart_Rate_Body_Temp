@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <div class="login">
+        <h2>Predict Heart Rate</h2>
+        <div class="box">
+            
+            <div class="content">
+                <form action="{{ url_for('predict')}}" method="post">
+                    <div class="input">
+                        <input type="text" name="Age" placeholder="Age" required="required" />
+                    </div>
+                    <div class="input">
+
+                        <input type= ="number" name="SystolicBP" placeholder="SystolicBP" required="required">
+                    </div>
+                    <div class="input">
+
+                        <input type= ="number" name="DiastolicBP" placeholder="DiastolicBP" required="required">
+                    </div>
+                    <div class="input">
+
+                        <input type="text" name="BS" placeholder="BS" required="required" />
+                    </div>
+                    <div class="input">
+
+                        <input type="text" name="BodyTemp" placeholder="Body Temp" required="required" />
+                    </div>
+
+                    <br />
+                    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+                </form>
+                <br>
+                <br>
+                {{ prediction_text }}
+
+            </div>
+
+
+</body>
+</html>
+
